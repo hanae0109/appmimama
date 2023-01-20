@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Appmimama</string>
+    <string name="starters">Entrees</string>
+    <string name="dishes">plats</string>
+    <string name="desserts">Desserts</string>
+    <string name="welcome">Welcome to \nMIMAMA!</string>
+
+    <string name="Itemcontain"></string>
+    <string name="DroidRestaurant">DroidRestaurant</string>
+    <string name="Starters">Entrees</string>
+    <string name="Dishes">Plats</string>
+    <string name="Desserts">Desserts</string>
+
+    <string-array name="Dishes">
+        <item>Pizza</item>
+        <item>Salade</item>
+        <item>Burger</item>
+    </string-array>
+</resources>
