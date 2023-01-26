@@ -8,14 +8,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val item = intent.getSerializableExtra("dishes") as Items
     }
 }
 
 
 
-
-
-
-+
-        +

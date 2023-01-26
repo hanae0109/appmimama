@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="#5E6081"
-    tools:context="fr.isen.lopez.appmimama.model.HomeActivity">
+    tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/title"
+        android:text="@string/welcome"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,36 +30,36 @@
         android:contentDescription="TODO" />
 
     <Button
-        android:id="@+id/homefirst"
+        android:id="@+id/homeEntree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#5E688C"
-        android:text="@string/homefirst"
+        android:text="@string/starters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/homemain"
+        android:id="@+id/homePlat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="#5E688C"
-        android:text="@string/homemain"
+        android:text="@string/dishes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homefirst" />
+        app:layout_constraintTop_toBottomOf="@+id/homeEntree" />
 
     <Button
-        android:id="@+id/homesweet"
+        android:id="@+id/homeDessert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#5E688C"
-        android:text="@string/homesweet"
+        android:text="@string/desserts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homemain" />
+        app:layout_constraintTop_toBottomOf="@+id/homePlat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

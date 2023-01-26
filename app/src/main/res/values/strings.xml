@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Appmimama</string>
     <string name="starters">Entrees</string>
-    <string name="dishes">plats</string>
+    <string name="dishes">Plats</string>
     <string name="desserts">Desserts</string>
     <string name="welcome">Welcome to \nMIMAMA!</string>
 

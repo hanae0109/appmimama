@@ -6,7 +6,7 @@ import android.os.Bundle
 import fr.isen.lopez.appmimama.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding:ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -14,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intent = Intent(this, CategoryActivity::class.java)
-        binding.startMenu.setOnClickListener{
+        binding.homeEntree.setOnClickListener{
 
             // Snackbar.make(it, "affichage", Snackbar.LENGTH_SHORT).show()
             //Toast.makeText(this,"Chargement des entrées,Toast.LENGTH_SHORT)
@@ -23,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.dishMenu.setOnClickListener{
+        binding.homePlat.setOnClickListener{
 
             // Snackbar.make(it, "affichage", Snackbar.LENGTH_SHORT).show()
             //Toast.makeText(this,"Chargement des entrées,Toast.LENGTH_SHORT)
@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("Category", "Plats")
             startActivity(intent)}
 
-        binding.desertMenu.setOnClickListener{
+        binding.homeDessert.setOnClickListener{
 
             // Snackbar.make(it, "affichage", Snackbar.LENGTH_SHORT).show()
             //Toast.makeText(this,"Chargement des entrées,Toast.LENGTH_SHORT)

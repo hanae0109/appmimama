@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import fr.isen.lopez.appmimama.databinding.ActivityCategoryBinding
+import fr.isen.lopez.appmimama.model.Data
 import fr.isen.lopez.appmimama.model.DataResult
 import org.json.JSONObject
 
@@ -25,12 +26,11 @@ class CategoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Creation de list et la recup sous forme de variable
-        val dishes = resources.getStringArray(R.array.Plats).toList() as ArrayList<String>
         binding.categoryList.layoutManager = LinearLayoutManager( this)
-        binding.categoryList.adapter = CategoryAdapter(dishes) {
+       /* binding.categoryList.adapter = CategoryAdapter(dishes) {
             val intent = Intent( this, DetailActivity:: class.java)
             startActivity(intent)
-        }
+        }*/
 
         loadDishesFromAPI()
     }
@@ -41,19 +41,33 @@ class CategoryActivity : AppCompatActivity() {
         jsonObject.put("id_shop", "1")
         val jsonRequest = JsonObjectRequest(Request.Method.POST, url, jsonObject,{
             Log.w("CategoryActivity", "response : $it")
-            handleAPIData(it.toString())
+           this.handleAPIData(it.toString())
         }, {
             Log.w("CategoryActivity", "error : $it")
         })
         Volley.newRequestQueue(this).add(jsonRequest)
     }
+
     private fun handleAPIData(data:String){
+
+        println("on est dans handleApi")
         val dishesResult = Gson().fromJson(data, DataResult::class.java)
         val dishCategory = dishesResult.data.firstOrNull { it.nameFr == intent.getStringExtra("Category") }
 
         val adapter = binding.categoryList.adapter as CategoryAdapter
-        adapter.refreshList(dishCategory?.items?.map { it.nameFr } as ArrayList<String>)
-        Picasso.get().load("https://www.example.com/image.jpg").into(imageView);
+        val dishes = ArrayList<String>()
+        //val dishes = dishCategory.map { it.nameFr } as ArrayList<String>
+
+        /*for(value in dishCategory)
+
+        for(value in dishes){
+            println("HandleApiData : " + value)
+        }
+
+        binding.categoryList.adapter = CategoryAdapter(dishes)
+
+
+        adapter.refreshList(dishes)*/
     }
 
 }

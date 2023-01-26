@@ -8,12 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import fr.isen.lopez.appmimama.model.Items
 import kotlin.collections.ArrayList
 
-class CategoryAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (Items) -> Unit) :
+class CategoryAdapter(var dishes: ArrayList<String>) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val cellName = view.findViewById<TextView>(R.id.cellName)
-        val cellPicture = view.findViewById<TextView>(R.id.cellPicture)
-        val cellPrice = view.findViewById<TextView>(R.id.cellPrice)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -24,22 +23,16 @@ class CategoryAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (It
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val dishes = dishes[position]
-        holder.cellName.text = dishes.nameFr
-        holder.cellPrice.text = dishes.prices[0].price
+        holder.cellName.text = dishes
 
-        val firstImage = dishes.images[0]
-        if (firstImage.isNotEmpty()) {
-            Picasso.get().load(firstImage).into(holder.cellPicture)
-        }
-
-        holder.itemView.setOnClickListener {
-            onItemClickListener(dishes)
-        }
     }
 
     override fun getItemCount(): Int =dishes.size
 
-    fun refreshList(dishesFromAPI: ArrayList<Items>){
+    fun refreshList(dishesFromAPI: ArrayList<String>){
+        for(value in dishes){
+            println("plat : " + value)
+        }
         dishes = dishesFromAPI
         notifyDataSetChanged()
     }
